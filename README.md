@@ -37,11 +37,13 @@ GarminDb releases are hosted on [PyPI](https://pypi.org/project/garmindb/). Garm
 
 # Speichern auf coop1
 <br/>
-Files werden in:
-C:\Users\thors\HealthData\FitFiles\Activities geladen.<br/>
-Von dort nach 
-Z:\Dokumente\Sport\Garmin\GarminDB\HealthData\FitFiles\Activities kopieren.<br/>
-Nur die .fit-Dateien in Golden Cheetah importieren.
+Save to coop1
+
+Files are loaded into: <br/>
+C:\Users\thors\HealthData\FitFiles\Activities.
+Copy from there to <br/>
+Z:\Documents\Sport\Garmin\GarminDB\HealthData\FitFiles\Activities.<br/>
+Import only the .fit files into Golden Cheetah.
 <hr>
 
 * Ocassionally run `garmindb_cli.py --backup` to backup your DB files.
