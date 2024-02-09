@@ -31,7 +31,19 @@ Once you have your data in the DB, I recommend using a supplied Jupyter notebook
 GarminDb releases are hosted on [PyPI](https://pypi.org/project/garmindb/). GarminDb requires [Python](https://www.python.org/) 3.x. With Python installed, install the latest release with [pip](https://pypi.org/project/pip/) by running `pip install garmindb` in a terminal.
 * Copy `GarminConnectConfig.json.example` to `~/.GarminDb/GarminConnectConfig.json`, edit it, and add your Garmin Connect username and password and adjust the start dates to match the dats of your data in Garmin Connect.
 * Starting out: download all of your data and create your db by running `garmindb_cli.py --all --download --import --analyze` in a terminal.
-* Incrementally update your db by downloading the latest data and importing it by running `garmindb_cli.py --all --download --import --analyze --latest` in a terminal.
+ 
+## * Incrementally update your db by downloading the latest data and importing it by running `garmindb_cli.py --activities --download --import --analyze --latest ` in a terminal.
+<hr>
+
+# Speichern auf coop1
+<br/>
+Files werden in:
+C:\Users\thors\HealthData\FitFiles\Activities geladen.<br/>
+Von dort nach 
+Z:\Dokumente\Sport\Garmin\GarminDB\HealthData\FitFiles\Activities kopieren.<br/>
+Nur die .fit-Dateien in Golden Cheetah importieren.
+<hr>
+
 * Ocassionally run `garmindb_cli.py --backup` to backup your DB files.
 
 Update to the latest release with `pip install --upgrade garmindb`.
