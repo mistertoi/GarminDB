@@ -1,6 +1,21 @@
 import os
 import shutil
 
+# z scripts
+# geht zu: p03_GarminDB\scripts
+# python garmindb_cli.py --activities --download --import --analyze --latest
+'''
+Dateien werden dann nach 
+C:\Users\thors\HealthData\FitFiles\Activities
+downgeloadet. 
+Von dort die NEUEN Dateien nach "Z:\Dokumente\Sport\Garmin\GarminDB\HealthData\FitFiles\Activities" 
+KOPIEREN!!
+Jetzt können die Aktivitäten in GoldenbCheetah importiert werden, um z.B eine Heatmap zu erzeugen.
+'''
+
+print("Kopiervorgang startet...")
+print()
+
 # Quell- und Zielverzeichnisse definieren
 source_directory = r"C:\Users\thors\HealthData\FitFiles\Activities"
 fit_destination_directory = r"Z:\Dokumente\Sport\Garmin\GarminDB\HealthData\FitFiles\Activities"
@@ -17,7 +32,6 @@ files = os.listdir(source_directory)
 success_count = 0
 failure_count = 0
 
-print("Kopiervorgang startet...")
 
 # Durch alle Dateien iterieren und entsprechend kopieren
 for file in files:
