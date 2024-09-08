@@ -127,7 +127,7 @@ class Download():
         full_filename = f'{filename}.json'
         exists = os.path.isfile(full_filename)
         if not exists or overwite:
-            logger.info("%s %s", 'Overwriting' if exists else 'Saving', full_filename)
+            logger.debug("%s %s", 'Overwriting' if exists else 'Saving', full_filename)
             with open(full_filename, 'w') as file:
                 file.write(json.dumps(json_data, default=cls.__convert_to_json))
 
@@ -135,7 +135,7 @@ class Download():
         """Save binary data to a file."""
         exists = os.path.isfile(filename)
         if not exists or overwite:
-            logger.info("%s %s", 'Overwriting' if exists else 'Saving', filename)
+            logger.debug("%s %s", 'Overwriting' if exists else 'Saving', filename)
             response = self.garth.get("connectapi", url, api=True)
             with open(filename, 'wb') as file:
                 for chunk in response:
@@ -246,8 +246,8 @@ class Download():
             activity_id_str = str(activity['activityId'])
             activity_name_str = conversions.printable(activity['activityName'])
             root_logger.info("get_activities: %s (%s)", activity_name_str, activity_id_str)
-            json_filename = f'{directory}/activity_{activity_id_str}.json'
-            if not os.path.isfile(json_filename) or overwite:
+            json_filename = f'{directory}/activity_{activity_id_str}'
+            if not os.path.isfile(json_filename + '.json') or overwite:
                 root_logger.info("get_activities: %s <- %r", json_filename, activity)
                 self.__save_activity_details(directory, activity_id_str, overwite)
                 self.save_json_to_file(json_filename, activity)
